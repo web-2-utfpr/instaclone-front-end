@@ -7,9 +7,20 @@
         <div class="row center feed">
             <span class="red-text">${error}</span>
             <h3><a href="mailto:${user.getEmail()}">${user.getNome()}</a></h3>
-            <c:forEach var="image" items="${user.getPhotos()}">
-                <t:image url="${image.getUrl()}" create_time="${image.getCreate_time()}"  />
-            </c:forEach>
+            <div class="card white-text light-blue">
+
+              <div class="card-image">
+                <img :src="image.url" width="400px">
+              </div>
+              <div class="row">
+                <div class="col left">
+                  {{image.user.nome}}
+                </div>
+                <div class="col right">
+                  {{image.created_at}}
+                </div>
+              </div>
+            </div>
         </div>
     </jsp:body>
 </t:wrapper>
